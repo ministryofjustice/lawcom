@@ -1,0 +1,6 @@
+{
+    "name": "ministryofjustice/brookhouse",
+    "description": "Brookhouse theme",
+    "type": "wordpress-theme",
+    "require": {}
+}
