@@ -1,4 +1,5 @@
 node_modules
+dist/
 assets/vendor
 npm-debug.log
 assets/manifest.json
