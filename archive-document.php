@@ -8,7 +8,19 @@
     <?php $project = get_field('project');  ?>
     <?php
       if (!empty($project->post_name)) {
-        $url = "/project/" . $project->post_name . "/#" . $post->post_name;
+        // Get the current URL
+        $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        // Get the WordPress installation directory
+        $wp_installation_dir = ABSPATH;
+
+        // Calculate the subdirectory path
+        $subdirectory_path = str_replace($wp_installation_dir, '', dirname($current_url));
+
+        // Remove any trailing slashes
+        $subdirectory_path = rtrim($subdirectory_path, '/');
+
+        $url = $subdirectory_path ."/project/" . $project->post_name . "/#" . $post->post_name;
       } else {
         $url = get_permalink();
       }
