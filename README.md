@@ -1,5 +1,5 @@
 WP lawcom
 =========
 
-WordPress theme for Law Commission
+WordPress theme for Law Commission.
 
